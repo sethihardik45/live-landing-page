@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Talk to Astrologer</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1b1740;
+    --muted: #6b6788;
+    --accent: #f5a524;
+    --accent-ink: #1b1740;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(40px + env(safe-area-inset-top, 0px)) 24px calc(40px + env(safe-area-inset-bottom, 0px));
+    background: var(--bg);
+    color: var(--ink);
+    text-align: center;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .logo {
+    width: 78vw;
+    max-width: 340px;
+    height: auto;
+  }
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .cta {
+    display: block;
+    width: 100%;
+    padding: 20px 24px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .cta:active { transform: scale(.98); }
+  .cta:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+  .note { margin: 0; color: var(--muted); font-size: 1rem; }
+</style>
+</head>
+<body>
+ 
+  <img class="logo" src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/3d1c823e-79f7-46d9-b9b6-431ce0a65c11.png" alt="AstroTalk logo">
+ 
+  <main>
+    <!-- Change this href to your destination link -->
+    <a id="cta" class="cta" href="https://app.astrotalk.com/7IuK/ishanika">Talk to Astrologer</a>
+    <p class="note">Taking you there in <span id="count">3</span>…</p>
+  </main>
+ 
+<script>
+  var SECONDS = 3; // change to 2 for a 2-second redirect
+ 
+  var link = document.getElementById("cta").href;
+  var count = document.getElementById("count");
+  var remaining = SECONDS;
+ 
+  var timer = setInterval(function () {
+    remaining -= 1;
+    if (remaining > 0) {
+      count.textContent = remaining;
+    }
+  }, 1000);
+ 
+  setTimeout(function () {
+    clearInterval(timer);
+    window.location.href = link;
+  }, SECONDS * 1000);
+</script>
+ 
+<noscript>
+  <meta http-equiv="refresh" content="3;url=https://app.astrotalk.com/7IuK/ishanika">
+</noscript>
+ 
+</body>
+</html>
